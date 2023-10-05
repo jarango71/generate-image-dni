@@ -99,9 +99,13 @@ public class GenerateImage {
 		        int compositeRule = AlphaComposite.SRC_OVER;
 		        AlphaComposite ac;
 
-                byte[] decodedBytes = Base64.getDecoder().decode(person.getFotoPersona());
-                InputStream inputStream = new ByteArrayInputStream(decodedBytes);
-		        BufferedImage foto = ImageIO.read(inputStream);
+                byte[] pixels = Base64.getDecoder().decode(person.getFotoPersona());
+                //InputStream inputStream = new ByteArrayInputStream(pixels);
+                
+                BufferedImage foto = new BufferedImage(ANCHO, ALTO, BufferedImage.TYPE_BYTE_GRAY);
+                foto.getRaster().setDataElements(0, 0, ANCHO, ALTO, pixels);
+                
+		        //BufferedImage foto = ImageIO.read(inputStream);
 		        if(foto.getWidth() > ANCHO) {
 		        	BufferedImage resizedImage = new BufferedImage(ANCHO, ALTO, BufferedImage.TYPE_BYTE_GRAY);
 		        	Graphics2D gFotoAux = resizedImage.createGraphics();

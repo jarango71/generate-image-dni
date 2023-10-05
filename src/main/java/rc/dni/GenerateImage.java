@@ -162,8 +162,8 @@ public class GenerateImage {
             //String tipoSangre = "TIPO SANGRE " + persona.getTipoSangre();
             w.drawString(Tags.TIPO_SANGRE, x2, 130);
             if (person.getCondDiscapacidad() != null && !person.getCondDiscapacidad().trim().equals(""))
-                w.drawString(Tags.DISCAPACIDAD, x2, 170);
-            w.drawString(Tags.DONANTE, x2, 240);
+                w.drawString(Tags.DISCAPACIDAD, x2, 200);
+            w.drawString(Tags.DONANTE, x2, 270);
 
             w.setFont(new Font("Arial", Font.BOLD, 22));
 
@@ -181,10 +181,10 @@ public class GenerateImage {
             w.drawString(person.getEstadoCivil() != null ? person.getEstadoCivil(): "", x1, 230);
 
             w.drawString(person.getCodigoDactilar() != null ? person.getCodigoDactilar() : "", x2, 90);
-            w.drawString(person.getTipoSangre() != null ? person.getTipoSangre() : "", 910, 135);
-            w.drawString(person.getCondDonante() != null ? person.getCondDonante() : "", x2, 270);
+            w.drawString(person.getTipoSangre() != null ? person.getTipoSangre() : "", x2, 160);
+            w.drawString(person.getCondDonante() != null ? person.getCondDonante() : "", x2, 300);
             String condicion = person.getCondDiscapacidad() + " " + person.getPorDiscapacidad();
-            w.drawString(condicion, x2, 200);
+            w.drawString(condicion, x2, 230);
             w.dispose();
 
             ByteArrayOutputStream baos = new ByteArrayOutputStream();

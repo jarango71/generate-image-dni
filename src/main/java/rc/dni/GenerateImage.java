@@ -104,13 +104,13 @@ public class GenerateImage {
                 BufferedImage foto = new BufferedImage(ANCHO, ALTO, BufferedImage.TYPE_BYTE_GRAY);
                 foto.getRaster().setDataElements(0, 0, ANCHO, ALTO, pixels);
                 
-		        if(foto.getWidth() > ANCHO) {
+		        /*if(foto.getWidth() > ANCHO) {
 		        	BufferedImage resizedImage = new BufferedImage(ANCHO, ALTO, BufferedImage.TYPE_BYTE_GRAY);
 		        	Graphics2D gFotoAux = resizedImage.createGraphics();
 		        	gFotoAux.drawImage(foto, 0, 0, ANCHO, ALTO, null);
 		        	gFotoAux.dispose();
 		        	foto = resizedImage;
-		        }
+		        }*/
 		        ac = AlphaComposite.getInstance(compositeRule, alpha);
 		        w.drawImage(procesada,0,0,null);
 		        w.setComposite(ac);
